@@ -8,15 +8,16 @@ Starter code: From Python Crash Course book and Python Programming lectures (Uni
 
 import sys
 import pygame
-
+from settings import Settings
 class AlienInvasion:
     def __init__(self):
         pygame.init()
-        self.screen= pygame.display.set_mode((1200, 800))
+        self.settings= Settings()
+        self.screen= pygame.display.set_mode(self.settings.resolution)
         self.clock = pygame.time.Clock()
         pygame.display.set_caption("Alien Invasion")
 
-        self.bg_color= (230,230,230)
+        self.bg_color= self.settings.by_color
 
     def run_game(self):
         while True:
