@@ -1,1 +1,1 @@
-This is the repository for the Alien Invasion game. The game will follow track 1, where the player will move across the screen to kill invading aliens coming down with the use of the gun they are provided to shoot the aliens.
+This is the repository for the Alien Invasion game. The game will follow track 1, in which the ship will be travelling vertically on the right side of the screen, shooting the aliens oriented towards the ship from the left side of the screen.
