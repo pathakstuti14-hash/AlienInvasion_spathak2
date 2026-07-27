@@ -5,7 +5,7 @@ class Ship:
         self.screen_rect= self.screen.get_rect()
         self.image= pygame.image.load('images/ship.bmp')
         self.rect= self.image.get_rect()
-        self.rect.midrightside= self.screen_rect.midrightside
+        self.rect.midright= self.screen_rect.midright
 
     def blitme(self):
         self.screen.blit(self.image, self.rect)
