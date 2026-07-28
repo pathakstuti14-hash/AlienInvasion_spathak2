@@ -10,6 +10,8 @@ import sys
 import pygame
 from settings import Settings
 from ship import Ship
+from bullet import Bullet
+
 class AlienInvasion:
     def __init__(self):
         pygame.init()
@@ -20,11 +22,13 @@ class AlienInvasion:
 
         self.bg_color= self.settings.bg_color
         self.ship=Ship(self)
+        self.bullets= pygame.sprite.Group()
 
     def run_game(self):
         while True:
             self._check_events()
             self.ship.update()
+            self.bullet.update()
             self._update_screen()
             self.clock.tick(60)
 
@@ -46,6 +50,8 @@ class AlienInvasion:
             #the y works opposite, so y+=1 moves the ship 
         elif event.key== pygame.K_UP:
             self.ship.moving_up = True
+        elif event.key== pygame.K_SPACE:
+            self._fire_bullet()
         elif event.key == pygame.K_q:
             sys.exit()
 
@@ -58,11 +64,17 @@ class AlienInvasion:
             self.ship.moving_up= False
 
 
-
+    def _fire_bullet(self):
+        new_bullet= Bullet(self)
+        self.bullets.add(new_bullet)
 
 
     def _update_screen(self):
         self.screen.fill(self.bg_color)
+        for bullet in self.bullets.sprites():
+            bullet.draw_bullet()
+
+
         self.ship.blitme()
         pygame.display.flip()
 
