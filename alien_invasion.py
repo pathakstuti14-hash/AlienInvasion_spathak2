@@ -32,9 +32,9 @@ class AlienInvasion:
             if event.type == pygame.QUIT:
                  sys.exit()
             elif event.type == pygame.KEYDOWN:
-                  if event.key == pygame.K_UP:
+                  if event.key == pygame.K_DOWN:
                       self.ship.rect.y+=1
-                  
+                   #the y works opposite, so y+=1 moves the ship down
 
 
     def _update_screen(self):
