@@ -34,7 +34,7 @@ class AlienInvasion:
                  sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_DOWN:
-                    self.ship.move_down= True 
+                    self.ship.moving_down= True 
                    #the y works opposite, so y+=1 moves the ship 
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_DOWN:
