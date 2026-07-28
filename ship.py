@@ -22,9 +22,9 @@ class Ship:
 
 
     def update(self):
-        if self.moving_down and self.rect.down < self.screen_rect.down: 
+        if self.moving_down and self.rect.bottom < self.screen_rect.bottom: 
             self.rect.y += self.settings.ship_speed
-        if self.moving_up and self.rect.up > 0:
+        if self.moving_up and self.rect.top > 0: 
             self.rect.y -= self.settings.ship_speed
 
             
