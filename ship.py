@@ -17,11 +17,14 @@ class Ship:
         self.rect= self.image.get_rect()
         self.rect.midright= self.screen_rect.midright
         self.moving_down = False
+        self.moving_up = False
 
     def update(self):
         if self.moving_down:
             self.rect.y +=1
-
+        if self.moving_up:
+            self.rect.y -=1
+            
     def blitme(self):
         self.screen.blit(self.image, self.rect)
 
