@@ -11,3 +11,4 @@ class Settings:
         self.screen_height= 800
         self.resolution= (self.screen_width, self.screen_height)
         self.bg_color= (230,230,230)
+        self.ship_speed = 3.0
