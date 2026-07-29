@@ -1,3 +1,12 @@
+"""
+Alien Invasion
+Stuti Pathak
+This class is to create the sprites for the bullet of the game, and postition them on top of the ship image.
+Starter code: From Python Crash Course book and Python Programming lectures (Unit 6).
+7/28/2026
+"""
+
+
 import pygame
 from pygame.sprite import Sprite
 
