@@ -15,6 +15,7 @@ class Ship:
         self.settings= ai_game.settings
 
         self.image= pygame.image.load('images/ship.bmp')
+        self.image= pygame.transform.flip(self.image, True, False)
         self.rect= self.image.get_rect()
         self.rect.midright= self.screen_rect.midright
         self.moving_down = False
