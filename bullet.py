@@ -19,7 +19,8 @@ class Bullet(Sprite):
 
         self.rect= pygame.Rect(0,0, self.settings.bullet_width, self.settings.bullet_height)
 
-        self.rect.midtop = ai_game.ship.rect.midtop
+        self.rect.midleft = ai_game.ship.rect.midleft
+        #the ship is facing towards the left, so the bullets should come out from the middle left
 
     def update(self):
         self.rect.x -= self.settings.bullet_speed

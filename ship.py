@@ -15,7 +15,8 @@ class Ship:
         self.settings= ai_game.settings
 
         self.image= pygame.image.load('images/ship.bmp')
-        self.image= pygame.transform.flip(self.image, True, False)
+        self.image= pygame.transform.flip(self.image, 270)
+        #this will rotate the ship 270 degrees by calling on the old image, and storing the new rotation for self.image
         self.rect= self.image.get_rect()
         self.rect.midright= self.screen_rect.midright
         self.moving_down = False
