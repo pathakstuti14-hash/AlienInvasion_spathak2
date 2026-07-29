@@ -32,7 +32,7 @@ class AlienInvasion:
 
 
             for bullet in self.bullets.copy():
-                if bullet.rect.bottom <= 0:
+                if bullet.rect.right <= 0:
                     self.bullets.remove(bullet)
 
 
