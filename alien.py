@@ -15,10 +15,12 @@ class Alien(Sprite):
 
         self.screen= ai_game.screen
         self.image = pygame.image.load('images/alien.bmp')
+        self.image= pygame.transform.rotate(self.image, 90)
         self.rect = self.image.get_rect()
 
 
-        self.rect.x= self.rect.width
+        self.rect.x= 0
+        #this will put the aliens on the left side of the screen
         self.rect.y= self.rect.height
 
         
