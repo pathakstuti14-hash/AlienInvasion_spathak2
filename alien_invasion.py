@@ -88,12 +88,17 @@ class AlienInvasion:
 
 
         self.ship.blitme()
+        self.aliens.draw(self.screen)
         pygame.display.flip()
 
     def _create_fleet(self):
         alien= Alien(self)
+        alien_width = alien.rect.width
+        current_x = alien_width
+        while current_x <(self.settins.screen_width -2 * alien_width):
+            
         self.aliens.add(alien)
-        
+
 
 
 
