@@ -1,7 +1,7 @@
 """
 Alien Invasion
 Stuti Pathak
-Purpose: This is the class designed to control the aliens.
+Purpose: This is the class designed for the alien ship fleet by using sprite class of pygame. The alien ship will enter the screen from the left side, and move toward the ship on the right side of the screen.
 Starter code: From Python Crash Course book and Python Programming lectures (Unit 6).
 8/3/2026
 """

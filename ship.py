@@ -1,7 +1,7 @@
 """
 Alien Invasion
 Stuti Pathak
-This class is designed for the ship object the player uses throughout the game, so the ship class will keep track of the it's own rectangular area during the game.
+Purpose: This class is designed for the ship object the player uses throughout the game, the ship is controlled by the player, and will move up down the screen the right side of the screen.
 Starter code: From Python Crash Course book and Python Programming lectures (Unit 6).
 7/27/2026
 """

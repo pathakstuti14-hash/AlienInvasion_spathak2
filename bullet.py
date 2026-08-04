@@ -1,7 +1,7 @@
 """
 Alien Invasion
 Stuti Pathak
-This class is to create the sprites for the bullet of the game, and postition them on top of the ship image.
+Purpose: This class is to create the sprites for the bullet of the game, and postition them on top of the ship image, so they'll shoot towards the incoming alien fleet coming from the left side of the screen.
 Starter code: From Python Crash Course book and Python Programming lectures (Unit 6).
 7/28/2026
 """
