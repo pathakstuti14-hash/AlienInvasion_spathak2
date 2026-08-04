@@ -21,6 +21,7 @@ class Ship:
         self.rect.midright= self.screen_rect.midright
         self.moving_down = False
         self.moving_up = False
+    
 
 
     def update(self):
