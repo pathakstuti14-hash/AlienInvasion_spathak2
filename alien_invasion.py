@@ -91,6 +91,9 @@ class AlienInvasion:
         pygame.display.flip()
 
     def _create_fleet(self):
+        alien= Alien(self)
+        self.aliens.add(alien)
+        
 
 
 
