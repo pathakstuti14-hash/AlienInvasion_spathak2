@@ -93,13 +93,14 @@ class AlienInvasion:
 
     def _create_fleet(self):
         alien= Alien(self)
-        alien_width = alien.rect.width
-        current_x = alien_width
-        while current_x <(self.settings.screen_width -2 * alien_width):
+        alien_height = alien.rect.width
+        current_y = alien_height
+        while current_y <(self.settings.screen_height -2 * alien_height):
             new_alien = Alien(self)
-            new_alien.rect.x=current_x
+            new_alien.rect.left=0
+            new_alien.rect.y=current_y
             self.aliens.add(new_alien)
-            current_x+=2* alien_width
+            current_y+=2* alien_height
             
 
 

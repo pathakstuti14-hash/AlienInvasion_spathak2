@@ -19,7 +19,7 @@ class Alien(Sprite):
         self.rect = self.image.get_rect()
 
 
-        self.rect.x= 0
+        self.rect.x= self.rect.width 
         #this will put the aliens on the left side of the screen
         self.rect.y= self.rect.height
 
