@@ -23,4 +23,10 @@ class Alien(Sprite):
         #this will put the aliens on the left side of the screen
         self.rect.y= self.rect.height
 
+        self.settings= ai_game.settings
+
+    def update(self):
+     self.rect.x+= self.settings.alien_speed
+
+
         
