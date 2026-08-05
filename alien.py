@@ -26,7 +26,14 @@ class Alien(Sprite):
         self.settings= ai_game.settings
 
     def update(self):
-     self.rect.x+= self.settings.alien_speed
+     """Moves the alien down the screen"""
+     self.rect.y+= self.settings.alien_speed* self.settings.fleet_direction
+
+    def check_edges(self):
+       """Will return true if the alien is at the aedge of the screen"""
+       screen_rect= self.screen.get_rect()
+       return(self.rect.bottom >= screen_rect.bottom) or (self.rect.top <= 0)
+
 
 
         
