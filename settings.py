@@ -2,7 +2,7 @@
 Alien Invasion
 Stuti Pathak
 This class is to store all the settings of the game, including screen width, height, background color, and speed for the various objects, and the size of the objects (bullets, ship, aliens).
-Starter code: From Python Crash Course book and Python Programming lectures (Unit 6).
+Starter code: From Python Crash Course book and Python Programming lectures.
 7/27/2026
 """
 class Settings:
@@ -23,7 +23,7 @@ class Settings:
         self.alien_speed= 1.0
         self.fleet_drop_speed= 10
         self.fleet_direction= 1
-        
+
 
 
         

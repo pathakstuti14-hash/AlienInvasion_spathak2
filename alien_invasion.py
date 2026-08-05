@@ -101,7 +101,7 @@ class AlienInvasion:
         while current_x < (self.settings.screen_width - 3 * alien_width):
             current_y= alien_height
             while current_y <(self.settings.screen_height -2 * alien_height):
-                self._create_alien(current_y, current_x)
+                self._create_alien(current_x, current_y)
                 current_y+=2* alien_height
 
             current_x+=2* alien_width
@@ -123,6 +123,7 @@ class AlienInvasion:
             if alien.check_edges():
                 self._check_fleet_direction()
                 break
+
     def _check_fleet_direction(self):
         for alien in self.aliens.sprites():
             alien.rect.y += self.settings.fleet_drop_speed
