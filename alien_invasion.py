@@ -33,17 +33,16 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self.bullets.update()
+            self._update_bullets()
             self._update_aliens()
-
-
-            for bullet in self.bullets.copy():
-                if bullet.rect.right <= 0:
-                    self.bullets.remove(bullet)
-
-
             self._update_screen()
             self.clock.tick(60)
 
+    def _update_bullets(self):
+        for bullet in self.bullets.copy():
+            if bullet.rect.right <= 0:
+                self.bullets.remove(bullet)
+        collisions= pygame.sprite.groupcollide(self.bullets, self.aliens, True, True) 
     def _check_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
