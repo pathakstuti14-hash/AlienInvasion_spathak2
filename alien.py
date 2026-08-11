@@ -27,7 +27,9 @@ class Alien(Sprite):
 
     def update(self):
      """Moves the alien down the screen"""
-     self.rect.y+= self.settings.alien_speed* self.settings.fleet_direction
+     self.rect.x+= self.settings.alien_speed
+     self.rect.y+= self.settings.alien_speed*self.settings.fleet_direction
+
 
     def check_edges(self):
        """Will return true if the alien is at the edge of the screen"""
