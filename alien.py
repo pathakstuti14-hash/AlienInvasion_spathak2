@@ -26,7 +26,7 @@ class Alien(Sprite):
         self.settings= ai_game.settings
 
     def update(self):
-     """Moves the alien down the screen"""
+     """Moves the alien down the screen and toward the ship"""
      self.rect.x+= self.settings.alien_speed
      self.rect.y+= self.settings.alien_speed*self.settings.fleet_direction
 
