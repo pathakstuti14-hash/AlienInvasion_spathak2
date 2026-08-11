@@ -12,6 +12,7 @@ from settings import Settings
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
+from button import Button
 
 class AlienInvasion:
     def __init__(self):
@@ -25,6 +26,8 @@ class AlienInvasion:
         self.ship=Ship(self)
         self.bullets= pygame.sprite.Group()
         self.aliens= pygame.sprite.Group()
+
+        self.play_button= Button(self, "Play")
         
 
         self._create_fleet()
@@ -93,6 +96,10 @@ class AlienInvasion:
 
         self.ship.blitme()
         self.aliens.draw(self.screen)
+
+        if not self.game_active:
+            self.play_button.draw_button()
+
         pygame.display.flip()
 
     def _create_fleet(self):
