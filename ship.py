@@ -18,7 +18,7 @@ class Ship:
         self.image= pygame.transform.rotate(self.image, 90)
         #this will rotate the ship 270 degrees by calling on the old image, and storing the new rotation for self.image
         self.rect= self.image.get_rect()
-        self.rect.midright= self.screen_rect.midright
+        self.center_ship()
         self.moving_down = False
         self.moving_up = False
     
@@ -33,3 +33,8 @@ class Ship:
             
     def blitme(self):
         self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+      self.rect.midright= self.screen_rect.midright
+
+
