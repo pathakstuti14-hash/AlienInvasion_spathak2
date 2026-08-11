@@ -12,6 +12,7 @@ from settings import Settings
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
+from game_stats import GameStats
 from button import Button
 
 class AlienInvasion:
@@ -26,6 +27,8 @@ class AlienInvasion:
         self.ship=Ship(self)
         self.bullets= pygame.sprite.Group()
         self.aliens= pygame.sprite.Group()
+
+        self.stats= GameStats(self)
 
         self.play_button= Button(self, "Play")
         
@@ -46,10 +49,14 @@ class AlienInvasion:
         for bullet in self.bullets.copy():
             if bullet.rect.right <= 0:
                 self.bullets.remove(bullet)
-        collisions= pygame.sprite.groupcollide(self.bullets, self.aliens, True, True) 
-        if not self.aliens:
-            self.bullets.empty()
-            self._create_fleet()
+        self._check_bullet_alien_collisions()
+
+    def _check_bullet_alien_collisions(self):
+           collisions= pygame.sprite.groupcollide(self.bullets, self.aliens, True, True) 
+           if not self.aliens:
+               self.bullets.empty()
+               self._create_fleet()
+
     def _check_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -114,7 +121,8 @@ class AlienInvasion:
                 self._create_alien(current_x, current_y)
                 current_y+=2* alien_height
 
-            current_x+=2* alien_width
+            current_x+=2* alien_height
+            current_y= alien_height
             
 
 
@@ -124,9 +132,13 @@ class AlienInvasion:
         new_alien.rect.y=y_position
         self.aliens.add(new_alien)
 
+
     def _update_aliens(self):
         self._check_fleet_edges()
         self.aliens.update()
+
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            print("Ship hit!!!")
 
     def _check_fleet_edges(self):
         for alien in self.aliens.sprites():
