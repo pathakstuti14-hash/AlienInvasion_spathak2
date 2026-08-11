@@ -22,7 +22,7 @@ class AlienInvasion:
         pygame.init()
 
 
-        self.game_active= True
+        self.game_active= False
 
         self.settings= Settings()
         self.screen= pygame.display.set_mode(self.settings.resolution)
@@ -80,8 +80,19 @@ class AlienInvasion:
                 self._check_play_button(mouse_pos)
 
     def _check_play_button(self, mouse_pos):
-        if self.play_button.rect.collidepoint(mouse_pos):
-            self.game_active=True
+        button_clicked= self.play_button.rect.collidepoint(mouse_pos) 
+        if  button_clicked and not self.game_active:
+            self._reset_game()
+
+    def _reset_game(self):
+        self.stats.reset_stats()
+        self.game_active=True
+        
+        self.bullets.empty()
+        self.aliens.empty()
+        
+        self._create_fleet()
+        self.ship.center_ship()
 
 
     def _check_keydown_events(self, event):
