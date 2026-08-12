@@ -61,10 +61,12 @@ class AlienInvasion:
         self._check_bullet_alien_collisions()
 
     def _check_bullet_alien_collisions(self):
-           collisions= pygame.sprite.groupcollide(self.bullets, self.aliens, True, True) 
-           if not self.aliens:
-               self.bullets.empty()
-               self._create_fleet()
+        collisions= pygame.sprite.groupcollide(self.bullets, self.aliens, True, True) 
+
+        if not self.aliens:
+            self.bullets.empty()
+            self._create_fleet()
+            self.setting.increase_speed()
 
     def _check_events(self):
         for event in pygame.event.get():
@@ -84,6 +86,7 @@ class AlienInvasion:
         if  button_clicked and not self.game_active:
             self._reset_game()
 
+
     def _reset_game(self):
         self.stats.reset_stats()
         self.game_active=True
@@ -93,6 +96,9 @@ class AlienInvasion:
         
         self._create_fleet()
         self.ship.center_ship()
+
+        pygame.mouse.set_visble(False)
+        self.settings.intialize_dynamic_settings()
 
 
     def _check_keydown_events(self, event):
@@ -182,7 +188,11 @@ class AlienInvasion:
             sleep(0.5)
         else:
             self.game_active= False
+            pygame.mouse.set_visible(True)
        
+
+
+
     def _check_fleet_edges(self):
         for alien in self.aliens.sprites():
             if alien.check_edges():
