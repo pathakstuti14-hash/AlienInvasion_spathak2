@@ -20,10 +20,10 @@ class Settings:
         self.bullet_color = (60,60,60)
         self.bullets_allowed = 8
 
-        self.fleet_drop_speed= 5
+        self.fleet_drop_speed= 8
     
 
-        self.speedup_scale= 1.1
+        self.speedup_scale= 2 #1.1
         self.ship_lives=3
 
         self.intialize_dynamic_settings()
