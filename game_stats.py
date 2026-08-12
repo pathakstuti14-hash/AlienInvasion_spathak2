@@ -2,9 +2,9 @@
 """
 Alien Invasion
 Stuti Pathak
-This class is to store all the settings of the game, including screen width, height, background color, and speed for the various objects, and the size of the objects (bullets, ship, aliens).
+Purpose: Progression of game kept trac
 Starter code: From Python Crash Course book and Python Programming lectures.
-7/27/2026
+8/11/2026
 """
 class GameStats:
     def __init__(self, ai_game):
@@ -14,4 +14,6 @@ class GameStats:
 
     def reset_stats(self):
         self.ships_left= self.settings.ship_lives
+        self.score=0
         
+
