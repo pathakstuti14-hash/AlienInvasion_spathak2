@@ -8,8 +8,10 @@ Starter code: From Python Crash Course book and Python Programming lectures (Uni
 
 
 import pygame
-class Ship:
+from pygame.sprite import Sprite
+class Ship(Sprite):
     def __init__(self, ai_game):
+        super().__init__()
         self.screen= ai_game.screen
         self.screen_rect= self.screen.get_rect()
         self.settings= ai_game.settings

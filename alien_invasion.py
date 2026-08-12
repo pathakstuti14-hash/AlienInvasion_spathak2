@@ -68,11 +68,15 @@ class AlienInvasion:
         if collisions:
             self.stats.score+= self.settings.alien_points
             self.sb.prep_score()
+            self.sb.check_high_score()
 
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
             self.settings.increase_level()
+            self.stats.level+=1
+            self.sb.prep_level()
+
 
     def _check_events(self):
         for event in pygame.event.get():
@@ -96,7 +100,10 @@ class AlienInvasion:
     def _reset_game(self):
         self.stats.reset_stats()
         self.sb.prep_score()
+        self.sb.prep_level()
+        self.sb.prep_ships()
         self.game_active=True
+
         
         self.bullets.empty()
         self.aliens.empty()
@@ -186,7 +193,8 @@ class AlienInvasion:
     def _ship_hit(self):
         if self.stats.ships_left>0:
             self.stats.ships_left -= 1
-
+            self.sb.prep_ships()
+            
             self.bullets.empty()
             self.aliens.empty()
 

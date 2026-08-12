@@ -16,14 +16,14 @@ class Settings:
 
        
         self.bullet_width=15
-        self.bullet_height=300
+        self.bullet_height=6
         self.bullet_color = (60,60,60)
         self.bullets_allowed = 8
 
         self.fleet_drop_speed= 8
     
 
-        self.speedup_scale= 1.5
+        self.speedup_scale= 1.3
         self.score_scale=1.5
 
         self.ship_lives=3
@@ -31,7 +31,7 @@ class Settings:
         self.initialize_dynamic_settings()
 
     def initialize_dynamic_settings(self):
-        self.ship_speed = 5.0
+        self.ship_speed = 4.0
         self.alien_speed= 1.0
         self.bullet_speed = 5.0
         self.alien_points=50
