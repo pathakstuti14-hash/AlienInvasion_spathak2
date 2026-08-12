@@ -72,7 +72,7 @@ class AlienInvasion:
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
-            self.settings.increase_speed()
+            self.settings.increase_level()
 
     def _check_events(self):
         for event in pygame.event.get():
