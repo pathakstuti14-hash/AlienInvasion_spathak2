@@ -97,7 +97,7 @@ class AlienInvasion:
         self._create_fleet()
         self.ship.center_ship()
 
-        pygame.mouse.set_visble(False)
+        pygame.mouse.set_visible(False)
         self.settings.intialize_dynamic_settings()
 
 
