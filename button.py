@@ -1,3 +1,10 @@
+"""
+Alien Invasion
+Stuti Pathak
+Purpose: The Button class displays the Play button of the game on the screen center, allowing the player to decide when to start the game by clicking on the button. This class controlls the Play button functions to start the game and showcase the button as well.
+Starter code: From Python Crash Course book and Python Programming lectures.
+8/11/2026
+"""
 import pygame.font
 
 class Button:

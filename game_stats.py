@@ -1,8 +1,7 @@
-#keeps track of how many ships left, adding up points, and score of the game.
 """
 Alien Invasion
 Stuti Pathak
-Purpose: Progression of game kept trac
+Purpose: Progression of the game statsitcs, such as the player current score, highscore, ships left, and if the game is active, by storing all this information in this class (not displaying).
 Starter code: From Python Crash Course book and Python Programming lectures.
 8/11/2026
 """
@@ -17,6 +16,6 @@ class GameStats:
         self.ships_left= self.settings.ship_lives
         self.score=0
         self.level=1
-        
+
 
 

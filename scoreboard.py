@@ -1,3 +1,11 @@
+"""
+Alien Invasion
+Stuti Pathak
+Purpose: The scoreboard class is designed to show the players current score, highscore, the ship lives the player has remaining, and the current level of the player. Displaying all this on the screen with pygame's built in font system.
+Starter code: From Python Crash Course book and Python Programming lectures.
+8/12/2026
+"""
+
 
 import pygame.font
 from pygame.sprite import Group
@@ -13,6 +21,7 @@ class Scoreboard:
 
         self.text_color= (30,30,30)
         self.font=pygame.font.SysFont(None, 48)
+        self.bg_color=self.settings.bg_color
 
         self.prep_score()
         self.prep_high_score()
