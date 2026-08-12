@@ -15,15 +15,15 @@ class Settings:
 
 
        
-        self.bullet_width= 300
-        self.bullet_height= 300
+        self.bullet_width=300 #15
+        self.bullet_height= 3
         self.bullet_color = (60,60,60)
         self.bullets_allowed = 8
 
         self.fleet_drop_speed= 10
     
 
-        self.speedup_scale= 1.1
+        self.speedup_scale= 2 #1.1
         self.ship_lives=3
 
         self.intialize_dynamic_settings()
