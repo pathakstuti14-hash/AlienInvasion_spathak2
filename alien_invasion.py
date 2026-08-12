@@ -72,7 +72,7 @@ class AlienInvasion:
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
-            self.setting.increase_speed()
+            self.settings.increase_speed()
 
     def _check_events(self):
         for event in pygame.event.get():
@@ -156,9 +156,9 @@ class AlienInvasion:
         alien_height = alien.rect.height
         current_y, current_x = alien_height, alien_width
 
-        while current_x < (self.settings.screen_width - 3 * alien_width):
+        while current_x < (self.settings.screen_width - 7 * alien_width):
             current_y= alien_height
-            while current_y <(self.settings.screen_height -2 * alien_height):
+            while current_y <(self.settings.screen_height - 2* alien_height):
                 self._create_alien(current_x, current_y)
                 current_y+=2* alien_height
 
