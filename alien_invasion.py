@@ -105,7 +105,7 @@ class AlienInvasion:
         self.ship.center_ship()
 
         pygame.mouse.set_visible(False)
-        self.settings.intialize_dynamic_settings()
+        self.settings.initialize_dynamic_settings()
 
 
     def _check_keydown_events(self, event):
